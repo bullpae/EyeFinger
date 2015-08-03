@@ -138,7 +138,7 @@ class FdView extends SampleCvViewBase {
 
 			mJavaDetector = new CascadeClassifier(mCascadeFile.getAbsolutePath());
 			mCascadeER = new CascadeClassifier(cascadeFileER.getAbsolutePath());
-			mCascadeEL = new CascadeClassifier(cascadeFileER.getAbsolutePath());
+			mCascadeEL = new CascadeClassifier(cascadeFileEL.getAbsolutePath());
 			if (mJavaDetector.empty() || mCascadeER.empty() || mCascadeEL.empty()) {
 				Log.e(TAG, "Failed to load cascade classifier");
 				mJavaDetector = null;

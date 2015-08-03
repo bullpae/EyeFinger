@@ -238,76 +238,78 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		private CascadeClassifier mEyeDetector;
 		
 		private BaseLoaderCallback mOpenCVCallBack = new BaseLoaderCallback(this.getActivity()) {
-			@Override
-			public void onManagerConnected(int status) {
-				switch (status) {
-				case LoaderCallbackInterface.SUCCESS: {
-					Log.i(TAG, "OpenCV loaded Successfully");
-					mOpenCvCameraView.enableView();
-				}
-					break;
-				default: {
-					super.onManagerConnected(status);
-				}
-					break;
-				}
-				/*
-				switch (status) {
-				case LoaderCallbackInterface.SUCCESS: {
-					
-					try {
-						InputStream is = getResources().openRawResource(R.raw.lbpcascade_frontalface);
-						File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
-						mCascadeFile = new File(cascadeDir, "lbpcascade_frontalface.xml");
-						FileOutputStream os = new FileOutputStream(mCascadeFile);
+//			@Override
+//			public void onManagerConnected(int status) {
+//				
+//
+//				switch (status) {
+//				case LoaderCallbackInterface.SUCCESS: {
+//					Log.i(TAG, "OpenCV loaded Successfully");
+//					mOpenCvCameraView.enableView();
+//				}
+//					break;
+//				default: {
+//					super.onManagerConnected(status);
+//				}
+//					break;
+//				}
 
-						byte[] buffer = new byte[4096];
-						int bytesRead;
-						while ((bytesRead = is.read(buffer)) != -1) {
-							os.write(buffer, 0, bytesRead);
-						}
-						is.close();
-						os.close();
-
-						InputStream iser = getResources().openRawResource(R.raw.haarcascade_lefteye_2splits);
-						File RightEyecascadeDir = getDir("RightEyecascade", Context.MODE_PRIVATE);
-						File right_eye_cascadeFile = new File(RightEyecascadeDir, "haarcascade_eye_right.xml");
-						FileOutputStream oser = new FileOutputStream(right_eye_cascadeFile);
-
-						byte[] bufferER = new byte[4096];
-						int bytesReadER;
-						while ((bytesReadER = iser.read(bufferER)) != -1) {
-							oser.write(bufferER, 0, bytesReadER);
-						}
-						iser.close();
-						oser.close();
-
-						mFaceDetector = new CascadeClassifier(mCascadeFile.getAbsolutePath());
-
-						mEyeDetector = new CascadeClassifier(right_eye_cascadeFile.getAbsolutePath());
-						cascadeDir.delete();
-						RightEyecascadeDir.delete();
-
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-					mOpenCvCameraView.setCameraIndex(1);
-					// mOpenCvCameraView.enableFpsMeter();
-					mOpenCvCameraView.enableView();
-
-				}
-					break;
-				default: {
-					super.onManagerConnected(status);
-				}
-					break;
-				}
-				*/
-			}
-		};
+//				switch (status) {
+//				case LoaderCallbackInterface.SUCCESS: {
+//					
+//					try {
+//						InputStream is = getResources().openRawResource(R.raw.lbpcascade_frontalface);
+//						File cascadeDir = this.getActivity().getDir("cascade", Context.MODE_PRIVATE);
+//						mCascadeFile = new File(cascadeDir, "lbpcascade_frontalface.xml");
+//						FileOutputStream os = new FileOutputStream(mCascadeFile);
+//
+//						byte[] buffer = new byte[4096];
+//						int bytesRead;
+//						while ((bytesRead = is.read(buffer)) != -1) {
+//							os.write(buffer, 0, bytesRead);
+//						}
+//						is.close();
+//						os.close();
+//
+//						InputStream iser = getResources().openRawResource(R.raw.haarcascade_lefteye_2splits);
+//						File RightEyecascadeDir = getDir("RightEyecascade", Context.MODE_PRIVATE);
+//						File right_eye_cascadeFile = new File(RightEyecascadeDir, "haarcascade_eye_right.xml");
+//						FileOutputStream oser = new FileOutputStream(right_eye_cascadeFile);
+//
+//						byte[] bufferER = new byte[4096];
+//						int bytesReadER;
+//						while ((bytesReadER = iser.read(bufferER)) != -1) {
+//							oser.write(bufferER, 0, bytesReadER);
+//						}
+//						iser.close();
+//						oser.close();
+//
+//						mFaceDetector = new CascadeClassifier(mCascadeFile.getAbsolutePath());
+//
+//						mEyeDetector = new CascadeClassifier(right_eye_cascadeFile.getAbsolutePath());
+//						cascadeDir.delete();
+//						RightEyecascadeDir.delete();
+//
+//					} catch (IOException e) {
+//						e.printStackTrace();
+//					}
+//					mOpenCvCameraView.setCameraIndex(1);
+//					// mOpenCvCameraView.enableFpsMeter();
+//					mOpenCvCameraView.enableView();
+//
+//				}
+//					break;
+//				default: {
+//					super.onManagerConnected(status);
+//				}
+//					break;
+//				}
+//				
+//			}
+//		};
 	
 
-/*
+
 			@Override
 			public void onManagerConnected(int status) {
 				switch (status) {
@@ -419,7 +421,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 			}
 
 		};
-*/
+
 	}
 
 //	private BaseLoaderCallback mOpenCVCallBack = new BaseLoaderCallback(this) {
