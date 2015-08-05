@@ -33,8 +33,8 @@ public abstract class SampleCvViewBase extends SurfaceView implements SurfaceHol
         synchronized (this) {
 	        releaseCamera();
 	        
-	        //mCamera = new VideoCapture(Highgui.CV_CAP_ANDROID);
-	        mCamera = new VideoCapture(Highgui.CV_CAP_ANDROID_FRONT);
+	        mCamera = new VideoCapture(Highgui.CV_CAP_ANDROID + 1);
+	        //mCamera = new VideoCapture(Highgui.CV_CAP_ANDROID_FRONT);
 	        if (!mCamera.isOpened()) {
 	            mCamera.release();
 	            mCamera = null;
@@ -123,11 +123,26 @@ public abstract class SampleCvViewBase extends SurfaceView implements SurfaceHol
             if (bmp != null) {
                 Canvas canvas = mHolder.lockCanvas();
                 if (canvas != null) {
+                	//canvas.rotate(90,0,0);
                     canvas.drawBitmap(bmp, (canvas.getWidth() - bmp.getWidth()) / 2, (canvas.getHeight() - bmp.getHeight()) / 2, null);
                    // mFps.draw(canvas, (canvas.getWidth() - bmp.getWidth()) / 2, 0);
                     mHolder.unlockCanvasAndPost(canvas);
                 }
                 bmp.recycle();
+                
+//				if (canvas != null) {
+//					canvas.rotate(90, 0, 0);
+//					float scale = canvas.getWidth() / (float) bmp.getHeight();
+//					float scale2 = canvas.getHeight() / (float) bmp.getWidth();
+//					if (scale2 > scale) {
+//						scale = scale2;
+//					}
+//					if (scale != 0) {
+//						canvas.scale(scale, scale, 0, 0);
+//					}
+//					canvas.drawBitmap(bmp, 0, -bmp.getHeight(), null);
+//				}
+//				bmp.recycle();
             }
         }
 
